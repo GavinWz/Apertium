@@ -14,6 +14,10 @@ int main(int argc, char **argv){
 
 	out = u_get_stdout();
 	in = u_finit(stdin, NULL, NULL);
+	if(!in){
+		fputs("Couldn't get the stdandard input stream.\n", stderr);
+		return EXIT_FAILURE;
+	}
 	u_fgets(chars, N, in);
 	len = u_strlen(chars);
 	for(i = 0; i < len - 1; i++){
@@ -25,4 +29,5 @@ int main(int argc, char **argv){
 		u_fputc(chars[i], out);
  	  	u_fputc('\n', out);
 	}
+	return EXIT_SUCCESS;
 }
