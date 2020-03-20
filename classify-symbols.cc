@@ -26,5 +26,7 @@ int main(int argc, char **argv){
 		u_fputc(chars[i], out);
  	  	u_fputc('\n', out);
 	}
+	u_fclose(in);
+	u_fclose(out);
 	return EXIT_SUCCESS;
 }
