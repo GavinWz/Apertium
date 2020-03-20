@@ -1,4 +1,4 @@
-# Apertium
+# Robust tokenisation --Apertium
 
 ## Coding Challenge
 
@@ -7,6 +7,8 @@
 At the suggestion of mentor Tino Didriksen, I used the ICU and C++ to complete my code.
 
 [classify-symbols.cpp](https://github.com/GavinWz/Apertium/blob/master/classify-symbols.cpp) is the latest version of it. 
+
+[classifu-symbols.cc](https://github.com/GavinWz/Apertium/blob/master/classify-symbols.cc) is the update version of classify-symbol.cpp. There is no major changes, all the little details. Besides, I used u_fadopt() instead of u_finit() to initialize the UFILE input stream to avoid mixing I/O by transferring the file stream ownership.
 
 ### Compile
 To compile this code, first make sure the ICU environment is available, and then compile it with the following command:
