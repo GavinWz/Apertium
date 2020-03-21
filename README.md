@@ -4,7 +4,7 @@
 
 [classify-symbols.c](https://github.com/GavinWz/Apertium/blob/master/classify-symbols.c) is the previous version, which is wrong because of my misunderstanding of the [Coding Challenge](http://wiki.apertium.org/wiki/Ideas_for_Google_Summer_of_Code/Robust_tokenisation).    
 
-At the suggestion of mentor Tino Didriksen and Flammie, I used the ICU and C++ to complete my code.
+At the suggestion of mentor Tino and Flammie , I used the ICU and C++ to complete my code.
 
 [classify-symbols.cpp](https://github.com/GavinWz/Apertium/blob/master/classify-symbols.cpp) is the latest version of it. 
 
