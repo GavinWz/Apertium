@@ -4,9 +4,9 @@ It is mainly divided into several processes:
 
 1. **Generate transducers based on dictionary content**
 
-    Before reading the standard input stream of characters, lt-proc will open the compiled dictionary "apertium-zho.zho.bin", create a class object **fstp** of class FSTProcessor and  initialize a class object **current_state** of class **State** by **FSTProcessor: : initAnalysis** function (fst_processor. cc: 1150).
+    Before reading the standard input stream of characters, lt-proc will open the compiled dictionary "apertium-zho.zho.bin", create a class object **fstp** of class **FSTProcessor** and  initialize a class object **current_state** of class **State** by **FSTProcessor: : initAnalysis** function (fst_processor. cc: 1150).
 
-    In the **FSTProcessor::load**(fst_processor. cc: 845) function, the grammatical labels of the word information such as \<n>\<adj> are stored in "**slexicinv**"(vector<wstring>) through the **Alphabet::read** function (Alphabet. cc: 152), and the Unicode value of the word and its negative weight in the dictionary are stored in **slexic**( map<wstring, int, Ltstr> ).Then program load the dictionary and generate all the transducers.  Transducer details are stored in the **transducers**(map < wstring TransExe, Ltstr >). The first parameter key is the transducer name of type wstring, and the second parameter value is the transducer operator object of class TransExe.  An important information in TransExe class is   **node_list** -the vector of **Node** class object-. The  detail information of transducers are contained in the Node class .
+    In the **FSTProcessor::load**(fst_processor. cc: 845) function, the grammatical labels of the word information such as \<n>\<adj> are stored in "**slexicinv**"(vector\<wstring>) through the **Alphabet::read** function (Alphabet. cc: 152), and the Unicode value of the word and its negative weight in the dictionary are stored in **slexic**( map<wstring, int, Ltstr> ).Then program load the dictionary and generate all the transducers.  Transducer details are stored in the **transducers**(map < wstring TransExe, Ltstr >). The first parameter key is the transducer name of type wstring, and the second parameter value is the transducer operator object of class **TransExe**.  An important information in TransExe class is   **node_list** -the vector of **Node** class object-. The  detail information of transducers are contained in the Node class .
 
 2. **Generate transition for each transducer**
 
@@ -14,7 +14,7 @@ It is mainly divided into several processes:
 
 3. **Read the words in the standard input stream**
 
-    The lexical analysis is start at Processor: : analysis () (fst_processior. Cc: 1284).
+    The lexical analysis is start at Processor: : analysis () (fst_processior. cc: 1284).
 
     The program reads the Chinese words in the standard input stream one by one through the **readAnalysis**(fst_processor.cc: 242) function, and stores the Unicode values and weights of the read words in the **sequence**(vector<pair<int, double>>)through the **State::apply**(state.cc: 101) function.
 
